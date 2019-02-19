@@ -1,0 +1,26 @@
+{
+  "name": "salon_dbmgmt",
+  "version": "1.0.0",
+  "description": "Salon Website",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohityadav11/Salon_DBMgmt.git"
+  },
+  "author": "Mohit,Zeeshan,Ghazali and Muzammil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohityadav11/Salon_DBMgmt/issues"
+  },
+  "homepage": "https://github.com/mohityadav11/Salon_DBMgmt#readme"
+}
