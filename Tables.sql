@@ -68,10 +68,9 @@ CREATE TABLE demands
 );
 
 CREATE TABLE services
-{
+(
 	service_id INT NOT NULL,
 	STAFF_ID INT NOT NULL,
 	price INT,
-	salon_id INT,
-
-}
+	salon_id INT
+);
