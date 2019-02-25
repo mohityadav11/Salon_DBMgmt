@@ -12,13 +12,13 @@ CREATE TABLE users
 );
 
 CREATE TABLE salons
-{
+(
 	salon_id INT NOT NULL,
 	salon_name VARCHAR(100),
 	address VARCHAR(100),
 	website_link VARCHAR(100),
 	contact_no INT
-};
+);
 
 CREATE TABLE staffs 
 {
