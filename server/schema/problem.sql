@@ -1,0 +1,6 @@
+CREATE TABLE problem
+(
+  id INT NOT NULL AUTO_INCREMENT,
+  problem_text VARCHAR(100),
+  PRIMARY KEY (id)
+);
