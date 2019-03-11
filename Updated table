@@ -1,0 +1,93 @@
+CREATE TABLE users
+(
+	user_Id INT PRIMARY KEY,
+	first_name VARCHAR(30),
+	last_name VARCHAR(30),
+	gender VARCHAR(1),
+	contact_no INT,
+	address VARCHAR(100),
+	created_at VARCHAR(100),
+	email VARCHAR(50),
+	password VARCHAR(20)
+);
+
+CREATE TABLE salons
+(
+	salon_Id INT NOT NULL,
+	salon_Name VARCHAR(100),
+	address VARCHAR(100),
+	website_link VARCHAR(100),
+	contact_no INT
+);
+
+CREATE TABLE staffs 
+{
+	staff_id INT NOT NULL,
+	salon_id INT NOT NULL,                 // a foreign key fromsalon table
+	first_name VARCHAR(100),
+	last_name VARCHAR(100),
+	age int,
+	gender VARCHAR(1),
+	contact_no int,
+	experience int,
+	photo_URL VARCHAR(100),
+	FOREIGN KEY (salon_Id) REFERENCES salon(salon_Id)
+};
+
+CREATE TABLE appointment
+(
+	salon_id int NOT NULL,         //foreign key
+	staff_id int NOT NULL,          //foreign key
+	User_id int NOT NULL,       //foreign key
+	appointment_time TIMESTAMP DEFAULT NOW(),
+	appointment_id INT         //primary key
+	FOREIGN KEY (salon_Id) REFERENCES salon(salon_Id),
+	FOREIGN KEY (staff_Id) REFERENCES staff(staff_Id),
+	FOREIGN KEY (User_Id) REFERENCES users(User_Id)
+);
+
+CREATE TABLE staff_feedbacks
+(
+	User_id int,             //foreign key
+	staff_id int,            //foreign key
+	staff_feedback_id int,          //primary key
+	rating int,
+	review VARCHAR(200)	
+	FOREIGN KEY (User_Id) users(user_Id),
+	FOREIGN KEY (staff_Id) REFERENCES staff(staff_Id)
+);
+
+CREATE TABLE salon_feedbacks
+(
+	User_id int,
+	salon_id int,
+	salon_feedback_id int,
+	rating int,
+	review VARCHAR(200),
+	FOREIGN KEY (salon_Id) REFERENCES salon(salon_Id),
+	FOREIGN KEY (User_Id) REFERENCES users(Users_Id)
+);
+
+CREATE TABLE demands
+(
+	demand_id INT NOT NULL,
+	demand_text VARCHAR(200),
+
+);
+
+CREATE TABLE services
+(
+	service_id INT PRIMARY KEY,
+	price INT,
+	salon_id INT,
+	STAFF_ID INT NOT NULL,
+	FOREIGN KEY (staff_Id) REFERENCES staff(staff_Id),
+	FOREIGN KEY (salon_Id) REFERENCES salon(salon_Id)
+);
+create table SubService
+( 
+	service_id INT NOT NULL,      //foreign key
+	SubService  VARCHAR(100),
+	FOREIGN KEY (service_Id) REFERENCES service(service_Id)
+
+);
